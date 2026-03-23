@@ -1,4 +1,4 @@
-import { Material, MaterialStats } from './types';
+import { Material, MaterialStats, MaterialCategory, MaterialStatus } from './types';
 import { v4 as uuidv4 } from 'uuid';
 
 const CSV_FILE = 'materials.csv';
@@ -29,7 +29,7 @@ async function readCSV(): Promise<Material[]> {
         materials.push({
           id: values[0],
           name: values[1],
-          category: values[2],
+          category: values[2] as MaterialCategory,
           quantity: parseFloat(values[3]),
           unit: values[4],
           unitPrice: parseFloat(values[5]),
@@ -37,7 +37,7 @@ async function readCSV(): Promise<Material[]> {
           supplier: values[7],
           orderDate: values[8],
           deliveryDate: values[9],
-          status: values[10] as Material['status'],
+          status: values[10] as MaterialStatus,
           location: values[11],
           notes: values[12] || ''
         });
