@@ -31,7 +31,7 @@ export default function MaterialForm({ initialData, onSubmit, onCancel }: Materi
     if (initialData) {
       setFormData({
         name: initialData.name,
-        category: initialData.category,
+        category: initialData.category as MaterialCategory,
         quantity: initialData.quantity,
         unit: initialData.unit,
         unitPrice: initialData.unitPrice,
