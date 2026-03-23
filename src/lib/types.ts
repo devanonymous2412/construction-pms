@@ -1,7 +1,7 @@
 export interface Material {
   id: string;
   name: string;
-  category: string;
+  category: MaterialCategory;
   quantity: number;
   unit: string;
   unitPrice: number;
@@ -9,7 +9,7 @@ export interface Material {
   supplier: string;
   orderDate: string;
   deliveryDate: string;
-  status: 'pending' | 'in_transit' | 'delivered' | 'cancelled';
+  status: MaterialStatus;
   location: string;
   notes?: string;
 }
